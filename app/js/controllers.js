@@ -5,6 +5,12 @@ var serverURL = 'http://alpemaca-books.herokuapp.com/';
 function BooksListCtrl($scope, $http) {
   $http.get(serverURL + 'books').success(function(data) {
     $scope.books = data;
+    for(var i = 0; i < $scope.books.length; i++) {
+      if($scope.books[i].readed)
+        $scope.books[i].readed_string = "Leído";
+      else
+        $scope.books[i].readed_string = "Por leer";
+    }
   });
 
   $scope.deleteBook = function(book, index) {

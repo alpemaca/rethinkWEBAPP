@@ -1,13 +1,23 @@
+<div class="row-fluid">
+  <div class="offset1 span2">Título</div>
+  <div class="span2">Autor</div>
+  <div class="span2">Editorial</div>
+  <div class="span2">Año</div>
+  <div class="span2">¿Leído?</div>
+</div>
+
 <ul>
-  <li ng-repeat="book in books">
-    <a href="#/books/{{book.id}}">
-      <span>{{book.title}}</span>
-      <span>{{book.author}}</span>
-      <span>{{book.editorial}}</span>
-      <span>{{book.year}}</span>
-      <span>{{book.readed}}</span>
-    </a>
-    <a href="" ng-click="deleteBook(book, $index)">x Borrar</a>
+  <li class="books" ng-repeat="book in books">
+    <div class="row-fluid">
+      <a href="#/books/{{book.id}}">
+        <span class="span2">{{book.title}}</span>
+        <span class="span2">{{book.author}}</span>
+        <span class="span2">{{book.editorial}}</span>
+        <span class="span2">{{book.year}}</span>
+        <span class="span2">{{book.readed_string}}</span>
+      </a>
+      <a href="" ng-click="deleteBook(book, $index)">x Borrar</a>
+    </div>
   </li>
 </ul>
 <a href="#books/new">Nuevo libro</a>
