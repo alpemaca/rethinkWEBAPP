@@ -1,6 +1,6 @@
 'use strict';
 
-var serverURL = 'http://localhost:3000/';
+var serverURL = 'http://alpemaca-books.herokuapp.com/';
 
 function BooksListCtrl($scope, $http) {
   $http.get(serverURL + 'books').success(function(data) {
